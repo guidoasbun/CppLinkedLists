@@ -10,17 +10,35 @@
 class Node
 {
 public:
+    // Default constructor
     Node() : data(0), ptrToNext(nullptr) {}
+
+    // Overloaded constructor
     Node(int theData, Node *newPtrToNext)
             : data(theData), ptrToNext(newPtrToNext){}
+
+    // Function getPtrToNext returns the address of the next node
     Node* getPtrToNext() const { return ptrToNext; }
+
+    // Function get getData returns the int value stored in the node
     int getData( ) const { return data; }
+
+    //  Function setData overwrites the int value stored in
+    // the node with a given value.
     void setData(int theData) { data = theData; }
+
+    // Function set PtrToNext overWrites the address stored in
+    // the node with a given address
     void setPtrToNext(Node *newPtrToNext)
     { ptrToNext = newPtrToNext; }
+
+    // Destructor
     ~Node(){}
 private:
+    // An int stored in the node
     int data;
+
+    // A pointer storing the address of the next node.
     Node *ptrToNext; // Pointer that points to next node.
 };
 
@@ -35,12 +53,15 @@ public:
     void print() const;
 
     void clearList();
+
     ~AnyList();
 
 private:
-    Node *ptrToFirst;
     // Pointer to point to the first node in the list.
-    int count;
+    Node *ptrToFirst;
+
     // Variable to keep track of number of nodes in the list.
+    int count;
+
 };
 #endif //WEEK2LESSON1_ANYLIST_H
