@@ -70,6 +70,8 @@ public:
 
     void deleteLastNode();
 
+    bool compareLists(const AnyList& compareList) const;
+
     ~AnyList();
 
 private:

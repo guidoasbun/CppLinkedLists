@@ -201,6 +201,33 @@ void AnyList::deleteLastNode()
     }
 }
 
+bool AnyList::compareLists(const AnyList &compareList) const
+{
+    // Checks to see if both lists are the same size, if not, returns false
+    if (compareList.count != count)
+        return false;
+    else
+    {
+        Node* firstList = ptrToFirst;
+        Node* secondList = compareList.ptrToFirst;
+
+        // Iterates through the lists, they are assumed to be the same length
+        while (firstList)
+        {
+            // Compares the data of both lists, if not the same, returns false
+            if (firstList->getData() != secondList->getData())
+                return false;
+            else
+            {
+                // Increments to the nextPtr of the lists
+                firstList = firstList->getPtrToNext();
+                secondList = secondList->getPtrToNext();
+            }
+        }
+        return true;
+    }
+}
+
 AnyList::~AnyList()
 {
     clearList();
