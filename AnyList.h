@@ -64,6 +64,12 @@ public:
 
     void deleteElem(int elem);
 
+    int getFirstElem() const;
+
+    bool isEmpty() const;
+
+    void deleteLastNode();
+
     ~AnyList();
 
 private:

@@ -76,6 +76,10 @@ void AnyList::insertBack(int newData)
     ++count;
 }
 
+int AnyList::getNumOfElements() const {
+    return count;
+}
+
 bool AnyList::search(int key) const
 {
     if (count == 0)
@@ -136,7 +140,7 @@ void AnyList::deleteElem(int elem)
 
             while (!found && current != nullptr)
             {
-                if (current->getData() ==elem)
+                if (current->getData() == elem)
                 {
                     trailCurrent->setPtrToNext(current->getPtrToNext());
                     delete current;
@@ -155,8 +159,46 @@ void AnyList::deleteElem(int elem)
     }
 }
 
-int AnyList::getNumOfElements() const {
-    return count;
+int AnyList::getFirstElem() const
+{
+    return ptrToFirst->getData();
+}
+
+bool AnyList::isEmpty() const
+{
+    return !count;
+}
+
+void AnyList::deleteLastNode()
+{
+
+    if (count == 0) // Checks to see if list is empty
+        cerr << "Cannot delete from an empty list.\n";
+    else if (count == 1) // If list has only one Node
+    {
+        delete ptrToFirst;
+        ptrToFirst = nullptr;
+        --count;
+    } else
+    {
+        // Creates the Temporary leading node pointer
+        Node* temp = ptrToFirst;
+        // Creates the previous node pointer behind the leading node.
+        Node* pre = ptrToFirst;
+        // Loop to set temp node to last, which will be deleted
+        // And pre to the last node.
+        while(temp->getPtrToNext())
+        {
+            pre = temp;
+            temp = temp->getPtrToNext();
+        }
+        // Sets pre as the last node and its ptrToNext to nullptr
+        pre->setPtrToNext(temp->getPtrToNext());
+        // Deletes the temp node pointer.
+        delete temp;
+        temp = nullptr;
+        --count;
+    }
 }
 
 AnyList::~AnyList()
