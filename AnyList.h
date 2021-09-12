@@ -60,6 +60,10 @@ public:
 
     bool search(int key) const;
 
+    void replaceData(int oldKey, int newKey);
+
+    void deleteElem(int elem);
+
     ~AnyList();
 
 private:

@@ -98,6 +98,63 @@ bool AnyList::search(int key) const
     }
 }
 
+void AnyList::replaceData(int oldKey, int newKey)
+{
+    bool found = false; // to stop the loop when key is found
+    Node* current = ptrToFirst;
+    while (current != nullptr && !found)
+    {
+        if (current->getData() == oldKey)
+            found = true;
+        else
+            current = current->getPtrToNext();
+    }
+    if (current == nullptr) // key was found
+        cout << "Element is not in the list." << endl;
+    else
+        current->setData(newKey);
+}
+
+void AnyList::deleteElem(int elem)
+{
+    if (count == 0)
+        cerr << "List is empty." << endl;
+    else
+    {
+        if (ptrToFirst->getData() == elem)
+        {
+            Node* current = ptrToFirst;
+            ptrToFirst = ptrToFirst->getPtrToNext();
+            delete current;
+            current = nullptr;
+            --count;
+        } else
+        {
+            bool found = false;
+            Node* trailCurrent = ptrToFirst;
+            Node* current = ptrToFirst->getPtrToNext();
+
+            while (!found && current != nullptr)
+            {
+                if (current->getData() ==elem)
+                {
+                    trailCurrent->setPtrToNext(current->getPtrToNext());
+                    delete current;
+                    current = nullptr;
+                    --count;
+                    found = true;
+                } else
+                {
+                    trailCurrent = current;
+                    current = current->getPtrToNext();
+                }
+            }
+            if (!found)
+                cout << "Element " << elem << " is not in the list." << endl;
+        }
+    }
+}
+
 int AnyList::getNumOfElements() const {
     return count;
 }
