@@ -58,6 +58,50 @@ void AnyList::clearList()
     count = 0;
 }
 
+void AnyList::insertBack(int newData)
+{
+    Node* ptrToNewNode = new Node(newData, nullptr);
+
+    if (ptrToFirst == nullptr)
+        ptrToFirst = ptrToNewNode;
+    else
+    {
+        Node* current = ptrToFirst;
+
+        while (current->getPtrToNext() != nullptr)
+            current = current->getPtrToNext();
+
+        current->setPtrToNext(ptrToNewNode);
+    }
+    ++count;
+}
+
+bool AnyList::search(int key) const
+{
+    if (count == 0)
+    {
+        cerr << "The list is empty.\n";
+        return false;
+    }
+    else
+    {
+        Node* current = ptrToFirst;
+
+        while (current != nullptr)
+        {
+            if (current->getData() == key)
+                return true;
+            else
+                current = current->getPtrToNext();
+        }
+        return false;
+    }
+}
+
+int AnyList::getNumOfElements() const {
+    return count;
+}
+
 AnyList::~AnyList()
 {
     clearList();

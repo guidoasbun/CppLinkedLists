@@ -54,6 +54,12 @@ public:
 
     void clearList();
 
+    void insertBack(int);
+
+    int getNumOfElements() const;
+
+    bool search(int key) const;
+
     ~AnyList();
 
 private:
