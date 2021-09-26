@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/guidoasbun/code/CPP/CLion/week2Lesson1/AnyList.cpp
+/Users/rodrigoasbun/CLionProjects/CppLinkedLists/AnyList.cpp
 AnyList.h
-/Users/guidoasbun/code/CPP/CLion/week2Lesson1/AnyList.h
+/Users/rodrigoasbun/CLionProjects/CppLinkedLists/AnyList.h
 iostream
 -
 
-/Users/guidoasbun/code/CPP/CLion/week2Lesson1/AnyList.h
+/Users/rodrigoasbun/CLionProjects/CppLinkedLists/AnyList.h
 string
 -
 

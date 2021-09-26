@@ -45,6 +45,10 @@ private:
 
 class AnyList
 {
+
+    /* *************** Lab 3 *************** */
+    friend std::ostream& operator<<(std::ostream& out, const  AnyList& list);
+
 public:
     AnyList() : ptrToFirst(nullptr), count(0) {}
 

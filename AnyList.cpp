@@ -7,6 +7,25 @@
 #include <iostream>
 using namespace std;
 
+/* *************** Lab 3 *************** */
+/* *************** Change ptrToFirst to first *************** */
+/* *************** Change getPtrToNext to getNext *************** */
+ostream& operator<<(ostream& out, const AnyList& list)
+{
+    if (!list.count)
+        cerr << "List is empty.";
+    else
+    {
+        Node* current = list.ptrToFirst;
+        while (current != nullptr)
+        {
+            out << current->getData() << " ";
+            current = current->getPtrToNext();
+        }
+    }
+    return out;
+}
+
 void AnyList::insertFront(int newData)
 {
     ptrToFirst = new Node(newData, ptrToFirst);

@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/guidoasbun/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/rodrigoasbun/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/guidoasbun/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5080.54/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
+RM = "/Users/rodrigoasbun/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/guidoasbun/code/CPP/CLion/week2Lesson1
+CMAKE_SOURCE_DIR = /Users/rodrigoasbun/CLionProjects/CppLinkedLists
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/guidoasbun/code/CPP/CLion/week2Lesson1/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/rodrigoasbun/CLionProjects/CppLinkedLists/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/week2Lesson1.dir/depend.make
@@ -68,29 +68,29 @@ include CMakeFiles/week2Lesson1.dir/flags.make
 
 CMakeFiles/week2Lesson1.dir/main.cpp.o: CMakeFiles/week2Lesson1.dir/flags.make
 CMakeFiles/week2Lesson1.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/guidoasbun/code/CPP/CLion/week2Lesson1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/week2Lesson1.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/week2Lesson1.dir/main.cpp.o -c /Users/guidoasbun/code/CPP/CLion/week2Lesson1/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rodrigoasbun/CLionProjects/CppLinkedLists/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/week2Lesson1.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/week2Lesson1.dir/main.cpp.o -c /Users/rodrigoasbun/CLionProjects/CppLinkedLists/main.cpp
 
 CMakeFiles/week2Lesson1.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/week2Lesson1.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/guidoasbun/code/CPP/CLion/week2Lesson1/main.cpp > CMakeFiles/week2Lesson1.dir/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rodrigoasbun/CLionProjects/CppLinkedLists/main.cpp > CMakeFiles/week2Lesson1.dir/main.cpp.i
 
 CMakeFiles/week2Lesson1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/week2Lesson1.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/guidoasbun/code/CPP/CLion/week2Lesson1/main.cpp -o CMakeFiles/week2Lesson1.dir/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rodrigoasbun/CLionProjects/CppLinkedLists/main.cpp -o CMakeFiles/week2Lesson1.dir/main.cpp.s
 
 CMakeFiles/week2Lesson1.dir/AnyList.cpp.o: CMakeFiles/week2Lesson1.dir/flags.make
 CMakeFiles/week2Lesson1.dir/AnyList.cpp.o: ../AnyList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/guidoasbun/code/CPP/CLion/week2Lesson1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/week2Lesson1.dir/AnyList.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/week2Lesson1.dir/AnyList.cpp.o -c /Users/guidoasbun/code/CPP/CLion/week2Lesson1/AnyList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/rodrigoasbun/CLionProjects/CppLinkedLists/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/week2Lesson1.dir/AnyList.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/week2Lesson1.dir/AnyList.cpp.o -c /Users/rodrigoasbun/CLionProjects/CppLinkedLists/AnyList.cpp
 
 CMakeFiles/week2Lesson1.dir/AnyList.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/week2Lesson1.dir/AnyList.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/guidoasbun/code/CPP/CLion/week2Lesson1/AnyList.cpp > CMakeFiles/week2Lesson1.dir/AnyList.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/rodrigoasbun/CLionProjects/CppLinkedLists/AnyList.cpp > CMakeFiles/week2Lesson1.dir/AnyList.cpp.i
 
 CMakeFiles/week2Lesson1.dir/AnyList.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/week2Lesson1.dir/AnyList.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/guidoasbun/code/CPP/CLion/week2Lesson1/AnyList.cpp -o CMakeFiles/week2Lesson1.dir/AnyList.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/rodrigoasbun/CLionProjects/CppLinkedLists/AnyList.cpp -o CMakeFiles/week2Lesson1.dir/AnyList.cpp.s
 
 # Object files for target week2Lesson1
 week2Lesson1_OBJECTS = \
@@ -104,7 +104,7 @@ week2Lesson1: CMakeFiles/week2Lesson1.dir/main.cpp.o
 week2Lesson1: CMakeFiles/week2Lesson1.dir/AnyList.cpp.o
 week2Lesson1: CMakeFiles/week2Lesson1.dir/build.make
 week2Lesson1: CMakeFiles/week2Lesson1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/guidoasbun/code/CPP/CLion/week2Lesson1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable week2Lesson1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/rodrigoasbun/CLionProjects/CppLinkedLists/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable week2Lesson1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/week2Lesson1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -116,6 +116,6 @@ CMakeFiles/week2Lesson1.dir/clean:
 .PHONY : CMakeFiles/week2Lesson1.dir/clean
 
 CMakeFiles/week2Lesson1.dir/depend:
-	cd /Users/guidoasbun/code/CPP/CLion/week2Lesson1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/guidoasbun/code/CPP/CLion/week2Lesson1 /Users/guidoasbun/code/CPP/CLion/week2Lesson1 /Users/guidoasbun/code/CPP/CLion/week2Lesson1/cmake-build-debug /Users/guidoasbun/code/CPP/CLion/week2Lesson1/cmake-build-debug /Users/guidoasbun/code/CPP/CLion/week2Lesson1/cmake-build-debug/CMakeFiles/week2Lesson1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/rodrigoasbun/CLionProjects/CppLinkedLists/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/rodrigoasbun/CLionProjects/CppLinkedLists /Users/rodrigoasbun/CLionProjects/CppLinkedLists /Users/rodrigoasbun/CLionProjects/CppLinkedLists/cmake-build-debug /Users/rodrigoasbun/CLionProjects/CppLinkedLists/cmake-build-debug /Users/rodrigoasbun/CLionProjects/CppLinkedLists/cmake-build-debug/CMakeFiles/week2Lesson1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/week2Lesson1.dir/depend
 
