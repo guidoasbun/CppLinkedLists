@@ -68,8 +68,11 @@ bool AnyList::operator==(const AnyList& otherList) const
         {
             if (compare->getData() != equalTo->getData())
                 return false;
-            compare = compare->getNext();
-            equalTo = equalTo->getNext();
+            else
+            {
+                compare = compare->getNext();
+                equalTo = equalTo->getNext();
+            }
         }
     }
     return true;
