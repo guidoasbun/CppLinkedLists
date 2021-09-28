@@ -16,12 +16,13 @@ int main()
     cout << myList;
     cout << endl;
 
-    cout << "Inserted: 2 4 7 8\n";
-    cout << "List is: ";
-    myList.print();
-    cout << endl;
+    AnyList myList2(myList);
+    cout << "My list 2: " << myList2 << endl;
 
-    myList.clearList();
+//    cout << "Inserted: 2 4 7 8\n";
+//    cout << "List is: ";
+//    myList.print();
+//    cout << endl;
 
 //    cout << "\nPrint the list after emptying it...";
 //    cout << "\nList is: ";
@@ -29,5 +30,8 @@ int main()
 //    cout << endl;
 //
 //    cout << endl;
+
+    myList2.clearList();
+    myList.clearList();
     return 0;
 }

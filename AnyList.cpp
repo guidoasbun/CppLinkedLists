@@ -7,41 +7,67 @@
 #include <iostream>
 using namespace std;
 
-/* *************** Lab 3 *************** */
-/* *************** Change ptrToFirst to first *************** */
-/* *************** Change getPtrToNext to getNext *************** */
+/* ***************************** Lab 3 ***************************** */
+/* **************** Overloaded insertion << operator **************** */
 ostream& operator<<(ostream& out, const AnyList& list)
 {
     if (!list.count)
         cerr << "List is empty.";
     else
     {
-        Node* current = list.ptrToFirst;
+        Node* current = list.first;
         while (current != nullptr)
         {
             out << current->getData() << " ";
-            current = current->getPtrToNext();
+            current = current->getNext();
         }
     }
     return out;
 }
 
+/* ***************************** Lab 3 ***************************** */
+/* ****************          Copy Constructor        **************** */
+AnyList::AnyList(const AnyList& otherList)
+{
+    count = otherList.count;
+    Node *other =  otherList.first;
+    first = nullptr;
+    while (other != nullptr)
+    {
+        Node* newNode = new Node(other->getData(), nullptr);
+
+        if (first == nullptr)
+            first = newNode;
+        else
+        {
+            Node* current = first;
+
+            while (current->getNext() != nullptr)
+                current = current->getNext();
+
+            current->setNext(newNode);
+        }
+
+        other = other->getNext();
+    }
+}
+
 void AnyList::insertFront(int newData)
 {
-    ptrToFirst = new Node(newData, ptrToFirst);
+    first = new Node(newData, first);
     ++count;
 }
 
 void AnyList::print() const
 {
-    if (ptrToFirst == nullptr)
+    if (first == nullptr)
         // Check if the list is empty.
         // You can also use: if (count == 0)
         cerr << "List is empty.";
         // Use cerr, instead of cout. Why?
     else
     {
-        Node *current = ptrToFirst;
+        Node *current = first;
         // Create a pointer to traverse the list.
         // This pointer will point to the first node in the list.
 
@@ -53,7 +79,7 @@ void AnyList::print() const
             // Output the data.
             cout << current->getData() << " ";
             // Move the pointer current forward.
-            current = current->getPtrToNext();
+            current = current->getNext();
         }
     }
 }
@@ -62,15 +88,15 @@ void AnyList::print() const
 // list object; it ONLY deletes the nodes.
 void AnyList::clearList()
 {
-    Node  *temp = ptrToFirst;
+    Node  *temp = first;
     // Pointer to delete the node, which
     // starts by pointing to the first node.
 
-    while (ptrToFirst != nullptr)
+    while (first != nullptr)
     {
-        ptrToFirst = ptrToFirst->getPtrToNext();
+        first = first->getNext();
         delete temp;
-        temp = ptrToFirst;
+        temp = first;
     }
 
     // Update the count outside the loop.
@@ -81,16 +107,16 @@ void AnyList::insertBack(int newData)
 {
     Node* ptrToNewNode = new Node(newData, nullptr);
 
-    if (ptrToFirst == nullptr)
-        ptrToFirst = ptrToNewNode;
+    if (first == nullptr)
+        first = ptrToNewNode;
     else
     {
-        Node* current = ptrToFirst;
+        Node* current = first;
 
-        while (current->getPtrToNext() != nullptr)
-            current = current->getPtrToNext();
+        while (current->getNext() != nullptr)
+            current = current->getNext();
 
-        current->setPtrToNext(ptrToNewNode);
+        current->setNext(ptrToNewNode);
     }
     ++count;
 }
@@ -108,14 +134,14 @@ bool AnyList::search(int key) const
     }
     else
     {
-        Node* current = ptrToFirst;
+        Node* current = first;
 
         while (current != nullptr)
         {
             if (current->getData() == key)
                 return true;
             else
-                current = current->getPtrToNext();
+                current = current->getNext();
         }
         return false;
     }
@@ -124,13 +150,13 @@ bool AnyList::search(int key) const
 void AnyList::replaceData(int oldKey, int newKey)
 {
     bool found = false; // to stop the loop when key is found
-    Node* current = ptrToFirst;
+    Node* current = first;
     while (current != nullptr && !found)
     {
         if (current->getData() == oldKey)
             found = true;
         else
-            current = current->getPtrToNext();
+            current = current->getNext();
     }
     if (current == nullptr) // key was found
         cout << "Element is not in the list." << endl;
@@ -144,24 +170,24 @@ void AnyList::deleteElem(int elem)
         cerr << "List is empty." << endl;
     else
     {
-        if (ptrToFirst->getData() == elem)
+        if (first->getData() == elem)
         {
-            Node* current = ptrToFirst;
-            ptrToFirst = ptrToFirst->getPtrToNext();
+            Node* current = first;
+            first = first->getNext();
             delete current;
             current = nullptr;
             --count;
         } else
         {
             bool found = false;
-            Node* trailCurrent = ptrToFirst;
-            Node* current = ptrToFirst->getPtrToNext();
+            Node* trailCurrent = first;
+            Node* current = first->getNext();
 
             while (!found && current != nullptr)
             {
                 if (current->getData() == elem)
                 {
-                    trailCurrent->setPtrToNext(current->getPtrToNext());
+                    trailCurrent->setNext(current->getNext());
                     delete current;
                     current = nullptr;
                     --count;
@@ -169,7 +195,7 @@ void AnyList::deleteElem(int elem)
                 } else
                 {
                     trailCurrent = current;
-                    current = current->getPtrToNext();
+                    current = current->getNext();
                 }
             }
             if (!found)
@@ -180,7 +206,7 @@ void AnyList::deleteElem(int elem)
 
 int AnyList::getFirstElem() const
 {
-    return ptrToFirst->getData();
+    return first->getData();
 }
 
 bool AnyList::isEmpty() const
@@ -195,24 +221,24 @@ void AnyList::deleteLastNode()
         cerr << "Cannot delete from an empty list.\n";
     else if (count == 1) // If list has only one Node
     {
-        delete ptrToFirst;
-        ptrToFirst = nullptr;
+        delete first;
+        first = nullptr;
         --count;
     } else
     {
         // Creates the Temporary leading node pointer
-        Node* temp = ptrToFirst;
+        Node* temp = first;
         // Creates the previous node pointer behind the leading node.
-        Node* pre = ptrToFirst;
+        Node* pre = first;
         // Loop to set temp node to last, which will be deleted
         // And pre to the last node.
-        while(temp->getPtrToNext())
+        while(temp->getNext())
         {
             pre = temp;
-            temp = temp->getPtrToNext();
+            temp = temp->getNext();
         }
-        // Sets pre as the last node and its ptrToNext to nullptr
-        pre->setPtrToNext(temp->getPtrToNext());
+        // Sets pre as the last node and its next to nullptr
+        pre->setNext(temp->getNext());
         // Deletes the temp node pointer.
         delete temp;
         temp = nullptr;
@@ -227,8 +253,8 @@ bool AnyList::compareLists(const AnyList &compareList) const
         return false;
     else
     {
-        Node* firstList = ptrToFirst;
-        Node* secondList = compareList.ptrToFirst;
+        Node* firstList = first;
+        Node* secondList = compareList.first;
 
         // Iterates through the lists, they are assumed to be the same length
         while (firstList)
@@ -239,8 +265,8 @@ bool AnyList::compareLists(const AnyList &compareList) const
             else
             {
                 // Increments to the nextPtr of the lists
-                firstList = firstList->getPtrToNext();
-                secondList = secondList->getPtrToNext();
+                firstList = firstList->getNext();
+                secondList = secondList->getNext();
             }
         }
         return true;
@@ -251,3 +277,32 @@ AnyList::~AnyList()
 {
     clearList();
 }
+
+
+
+
+
+/*
+ *
+ *     count = otherList.count;
+    Node *other =  otherList.first;
+
+    while (other != nullptr)
+    {
+        Node* newNode = new Node(other->getData(), nullptr);
+
+        if (first == nullptr)
+            first = newNode;
+        else
+        {
+            Node* current = first;
+
+            while (current->getNext() != nullptr)
+                current = current->getNext();
+
+            current->setNext(newNode);
+        }
+        other = other->getNext();
+    }
+ *
+ * */

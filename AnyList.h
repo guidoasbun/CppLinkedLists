@@ -11,14 +11,14 @@ class Node
 {
 public:
     // Default constructor
-    Node() : data(0), ptrToNext(nullptr) {}
+    Node() : data(0), next(nullptr) {}
 
     // Overloaded constructor
     Node(int theData, Node *newPtrToNext)
-            : data(theData), ptrToNext(newPtrToNext){}
+            : data(theData), next(newPtrToNext){}
 
-    // Function getPtrToNext returns the address of the next node
-    Node* getPtrToNext() const { return ptrToNext; }
+    // Function getNext returns the address of the next node
+    Node* getNext() const { return next; }
 
     // Function get getData returns the int value stored in the node
     int getData( ) const { return data; }
@@ -29,8 +29,8 @@ public:
 
     // Function set PtrToNext overWrites the address stored in
     // the node with a given address
-    void setPtrToNext(Node *newPtrToNext)
-    { ptrToNext = newPtrToNext; }
+    void setNext(Node *newPtrToNext)
+    { next = newPtrToNext; }
 
     // Destructor
     ~Node(){}
@@ -39,18 +39,23 @@ private:
     int data;
 
     // A pointer storing the address of the next node.
-    Node *ptrToNext; // Pointer that points to next node.
+    Node *next; // Pointer that points to next node.
 };
 
 
 class AnyList
 {
 
-    /* *************** Lab 3 *************** */
+    /* ***************************** Lab 3 ***************************** */
+    /* **************** Overloaded insertion << operator **************** */
     friend std::ostream& operator<<(std::ostream& out, const  AnyList& list);
 
 public:
-    AnyList() : ptrToFirst(nullptr), count(0) {}
+    AnyList() : first(nullptr), count(0) {}
+
+    /* ***************************** Lab 3 ***************************** */
+    /* ****************          Copy Constructor        **************** */
+    AnyList(const AnyList& otherList);
 
     void insertFront(int);
 
@@ -80,7 +85,7 @@ public:
 
 private:
     // Pointer to point to the first node in the list.
-    Node *ptrToFirst;
+    Node *first;
 
     // Variable to keep track of number of nodes in the list.
     int count;
