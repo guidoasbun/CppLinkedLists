@@ -55,7 +55,13 @@ public:
 
     /* ***************************** Lab 3 ***************************** */
     /* ****************          Copy Constructor        **************** */
+
     AnyList(const AnyList& otherList);
+
+    /* ***************************** Lab 3 ***************************** */
+    /* **************** Overloaded comparison Operator **************** */
+
+    bool operator==(const AnyList&) const;
 
     void insertFront(int);
 

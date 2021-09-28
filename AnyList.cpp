@@ -30,9 +30,11 @@ ostream& operator<<(ostream& out, const AnyList& list)
 AnyList::AnyList(const AnyList& otherList)
 {
     count = otherList.count;
+
     Node *other =  otherList.first;
     first = nullptr;
-    while (other != nullptr)
+
+    while (other)
     {
         Node* newNode = new Node(other->getData(), nullptr);
 
@@ -50,6 +52,27 @@ AnyList::AnyList(const AnyList& otherList)
 
         other = other->getNext();
     }
+}
+
+/* ***************************** Lab 3 ***************************** */
+/* **************** Overloaded comparison Operator **************** */
+bool AnyList::operator==(const AnyList& otherList) const
+{
+    if (count != otherList.count)
+        return false;
+    else
+    {
+        Node *compare = first;
+        Node *equalTo =  otherList.first;
+        while (equalTo)
+        {
+            if (compare->getData() != equalTo->getData())
+                return false;
+            compare = compare->getNext();
+            equalTo = equalTo->getNext();
+        }
+    }
+    return true;
 }
 
 void AnyList::insertFront(int newData)
