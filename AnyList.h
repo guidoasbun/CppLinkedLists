@@ -59,7 +59,7 @@ public:
     AnyList(const AnyList& otherList);
 
     /* ***************************** Lab 3 ***************************** */
-    /* **************** Overloaded comparison Operator **************** */
+    /* **************** Overloaded comparison Operator == **************** */
 
     bool operator==(const AnyList&) const;
 

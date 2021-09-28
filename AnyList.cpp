@@ -55,7 +55,7 @@ AnyList::AnyList(const AnyList& otherList)
 }
 
 /* ***************************** Lab 3 ***************************** */
-/* **************** Overloaded comparison Operator **************** */
+/* **************** Overloaded comparison Operator == **************** */
 bool AnyList::operator==(const AnyList& otherList) const
 {
     if (count != otherList.count)
