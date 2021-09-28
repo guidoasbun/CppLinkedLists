@@ -131,10 +131,10 @@ void AnyList::clearList()
 
 void AnyList::insertBack(int newData)
 {
-    Node* ptrToNewNode = new Node(newData, nullptr);
+    Node* newNode = new Node(newData, nullptr);
 
     if (first == nullptr)
-        first = ptrToNewNode;
+        first = newNode;
     else
     {
         Node* current = first;
@@ -142,7 +142,7 @@ void AnyList::insertBack(int newData)
         while (current->getNext() != nullptr)
             current = current->getNext();
 
-        current->setNext(ptrToNewNode);
+        current->setNext(newNode);
     }
     ++count;
 }
@@ -304,31 +304,29 @@ AnyList::~AnyList()
     clearList();
 }
 
-
-
-
-
 /*
- *
- *     count = otherList.count;
-    Node *other =  otherList.first;
+ *     Node* curOne = otherList.first;
+    Node* curTwo = nullptr;
 
-    while (other != nullptr)
+    count = otherList.count;
+
+    if (count <= 0)
     {
-        Node* newNode = new Node(other->getData(), nullptr);
+        first = nullptr;
+    } else
+    {
+        first = new Node(curOne->getData(), nullptr);
+        curTwo = first;
+        curOne = first;
 
-        if (first == nullptr)
-            first = newNode;
-        else
+        while (curOne != nullptr)
         {
-            Node* current = first;
-
-            while (current->getNext() != nullptr)
-                current = current->getNext();
-
-            current->setNext(newNode);
+            curTwo = new Node(curOne->getData(), nullptr);
+            curTwo = curTwo;
+            curOne = curOne->getNext();
+            curTwo = curTwo->getNext();
         }
-        other = other->getNext();
     }
- *
- * */
+ */
+*
+ * /
