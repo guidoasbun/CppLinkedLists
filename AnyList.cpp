@@ -78,6 +78,32 @@ bool AnyList::operator==(const AnyList& otherList) const
     return true;
 }
 
+/****************Practice Exam****************/
+bool AnyList::searchAndInsert(int insertData, AnyList &otherList) const
+{
+    Node *current = first;
+    bool found = false;
+    while (!found && current)
+    {
+        if (current->getData() == insertData)
+            found = true;
+        else
+            current = current->getNext();
+    }
+
+    if (found)
+    {
+        Node *newNode = new Node(insertData, otherList.first);
+        otherList.first = newNode;
+        otherList.count++;
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 void AnyList::insertFront(int newData)
 {
     first = new Node(newData, first);
@@ -303,30 +329,3 @@ AnyList::~AnyList()
 {
     clearList();
 }
-
-/*
- *     Node* curOne = otherList.first;
-    Node* curTwo = nullptr;
-
-    count = otherList.count;
-
-    if (count <= 0)
-    {
-        first = nullptr;
-    } else
-    {
-        first = new Node(curOne->getData(), nullptr);
-        curTwo = first;
-        curOne = first;
-
-        while (curOne != nullptr)
-        {
-            curTwo = new Node(curOne->getData(), nullptr);
-            curTwo = curTwo;
-            curOne = curOne->getNext();
-            curTwo = curTwo->getNext();
-        }
-    }
- */
-*
- * /

@@ -63,6 +63,9 @@ public:
 
     bool operator==(const AnyList&) const;
 
+    /****************Practice Exam****************/
+    bool searchAndInsert(int insertData, AnyList& otherList) const;
+
     void insertFront(int);
 
     void print() const;
