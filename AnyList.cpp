@@ -110,6 +110,24 @@ void AnyList::insertFront(int newData)
     ++count;
 }
 
+void AnyList::insertBack(int newData)
+{
+    Node* newNode = new Node(newData, nullptr);
+
+    if (first == nullptr)
+        first = newNode;
+    else
+    {
+        Node* current = first;
+
+        while (current->getNext() != nullptr)
+            current = current->getNext();
+
+        current->setNext(newNode);
+    }
+    ++count;
+}
+
 void AnyList::print() const
 {
     if (first == nullptr)
@@ -153,24 +171,6 @@ void AnyList::clearList()
 
     // Update the count outside the loop.
     count = 0;
-}
-
-void AnyList::insertBack(int newData)
-{
-    Node* newNode = new Node(newData, nullptr);
-
-    if (first == nullptr)
-        first = newNode;
-    else
-    {
-        Node* current = first;
-
-        while (current->getNext() != nullptr)
-            current = current->getNext();
-
-        current->setNext(newNode);
-    }
-    ++count;
 }
 
 int AnyList::getNumOfElements() const {
@@ -323,6 +323,22 @@ bool AnyList::compareLists(const AnyList &compareList) const
         }
         return true;
     }
+}
+
+void AnyList::swapFirstLast()
+{
+    Node* temp = first;
+    Node* pre = first;
+
+    while(temp->getNext())
+    {
+        pre = temp;
+        temp = temp->getNext();
+    }
+    pre->setNext(first);
+    temp->setNext(first->getNext());
+    first->setNext(nullptr);
+    first = temp;
 }
 
 AnyList::~AnyList()

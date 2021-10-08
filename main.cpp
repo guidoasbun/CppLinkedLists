@@ -12,17 +12,24 @@ int main()
     myList.insertFront(4);
     myList.insertFront(2);
 
-    cout << "Test: Insertion Operator <<\n";
+    cout << myList << endl;
+
+    myList.swapFirstLast();
     cout << myList;
-    cout << endl;
 
-    AnyList myList2(myList);
-    cout << "My list 2: " << myList2 << endl;
 
-    if (myList == myList2)
-        cout << "myList is the same as myList2" << endl;
-    else
-        cout << "myList is NOT the same as lyList2" << endl;
+
+//    cout << "Test: Insertion Operator <<\n";
+//    cout << myList;
+//    cout << endl;
+//
+//    AnyList myList2(myList);
+//    cout << "My list 2: " << myList2 << endl;
+//
+//    if (myList == myList2)
+//        cout << "myList is the same as myList2" << endl;
+//    else
+//        cout << "myList is NOT the same as lyList2" << endl;
 
 //    cout << "Inserted: 2 4 7 8\n";
 //    cout << "List is: ";
@@ -36,7 +43,7 @@ int main()
 //
 //    cout << endl;
 
-    myList2.clearList();
+//    myList2.clearList();
     myList.clearList();
     return 0;
 }

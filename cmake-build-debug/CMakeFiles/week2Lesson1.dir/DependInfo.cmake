@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/rodrigoasbun/CLionProjects/CppLinkedLists/AnyList.cpp" "/Users/rodrigoasbun/CLionProjects/CppLinkedLists/cmake-build-debug/CMakeFiles/week2Lesson1.dir/AnyList.cpp.o"
-  "/Users/rodrigoasbun/CLionProjects/CppLinkedLists/main.cpp" "/Users/rodrigoasbun/CLionProjects/CppLinkedLists/cmake-build-debug/CMakeFiles/week2Lesson1.dir/main.cpp.o"
+  "C:/Users/guido/CLionProjects/CppLinkedLists/AnyList.cpp" "C:/Users/guido/CLionProjects/CppLinkedLists/cmake-build-debug/CMakeFiles/week2Lesson1.dir/AnyList.cpp.obj"
+  "C:/Users/guido/CLionProjects/CppLinkedLists/main.cpp" "C:/Users/guido/CLionProjects/CppLinkedLists/cmake-build-debug/CMakeFiles/week2Lesson1.dir/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

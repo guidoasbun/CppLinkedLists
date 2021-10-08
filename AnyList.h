@@ -65,30 +65,19 @@ public:
 
     /****************Practice Exam****************/
     bool searchAndInsert(int insertData, AnyList& otherList) const;
-
     void insertFront(int);
-
-    void print() const;
-
-    void clearList();
-
     void insertBack(int);
-
+    void print() const;
+    void clearList();
     int getNumOfElements() const;
-
     bool search(int key) const;
-
     void replaceData(int oldKey, int newKey);
-
     void deleteElem(int elem);
-
     int getFirstElem() const;
-
     bool isEmpty() const;
-
     void deleteLastNode();
-
     bool compareLists(const AnyList& compareList) const;
+    void swapFirstLast();
 
     ~AnyList();
 
