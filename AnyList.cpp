@@ -309,7 +309,7 @@ bool AnyList::compareLists(const AnyList &compareList) const
         Node* secondList = compareList.first;
 
         // Iterates through the lists, they are assumed to be the same length
-        while (firstList)
+        while (firstList->getNext() != nullptr)
         {
             // Compares the data of both lists, if not the same, returns false
             if (firstList->getData() != secondList->getData())

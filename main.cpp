@@ -12,12 +12,13 @@ int main()
     myList.insertFront(4);
     myList.insertFront(2);
 
-    cout << myList << endl;
+    AnyList myList2;
 
-    myList.swapFirstLast();
-    cout << myList;
+    myList2.insertFront(8);
+    myList2.insertFront(7);
+    myList2.insertFront(4);
 
-
+    cout << myList.compareLists(myList2) << endl;
 
 //    cout << "Test: Insertion Operator <<\n";
 //    cout << myList;
